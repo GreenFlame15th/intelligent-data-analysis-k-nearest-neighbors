@@ -9,7 +9,7 @@ namespace lab
     static class PlaceGusser
     {
         static public Dictionary<places, Dictionary<bool, int>> MakeGuessesAndGetGuessQuiltyCount
-            (List<TextParametryzised> toTest, List<TextParametryzised> known, places[] testingPlaces, int nebourCount)
+            (List<TextParametryzised> toTest, List<TextParametryzised> known, places[] testingPlaces, int nebourCount, DistanceTypes distanceType)
         {
             Dictionary<places, Dictionary<bool, int>> guessQuiltyCount = new Dictionary<places, Dictionary<bool, int>>();
             foreach (places place in testingPlaces)
@@ -20,7 +20,7 @@ namespace lab
             }
             foreach (TextParametryzised testing in toTest)
             {
-                List<places> gussedPlaces = PlaceGusser.MakeGuesses(testing, known, testingPlaces, nebourCount);
+                List<places> gussedPlaces = PlaceGusser.MakeGuesses(testing, known, testingPlaces, nebourCount, distanceType);
                 foreach (places place in testingPlaces)
                 {
                     guessQuiltyCount[place][gussedPlaces.Contains(place) == testing.places.Contains(place)]++;
@@ -30,10 +30,10 @@ namespace lab
             }
             return guessQuiltyCount;
         }
-        static public List<places> MakeGuesses(TextParametryzised point, List<TextParametryzised> known, places[] placeToGuess, int nebourCount)
+        static public List<places> MakeGuesses(TextParametryzised point, List<TextParametryzised> known, places[] placeToGuess, int nebourCount, DistanceTypes distanceType)
         {
             List<places> toReturn = new List<places>();
-            List<NebourEntry> PotensionalNeighbours = GetPotensionalNeighbours(point, known);
+            List<NebourEntry> PotensionalNeighbours = GetPotensionalNeighbours(point, known, distanceType);
             List<NebourEntry> NeirestNergours = GetNeirestNergours(PotensionalNeighbours, nebourCount);
             foreach(places place in placeToGuess)
             {
@@ -57,19 +57,13 @@ namespace lab
             else
                 return false;
         }
-        static public List<NebourEntry> GetPotensionalNeighbours(TextParametryzised point, List<TextParametryzised> known)
+        static public List<NebourEntry> GetPotensionalNeighbours(TextParametryzised point, List<TextParametryzised> known, DistanceTypes distanceTypes)
         {
             List<NebourEntry> potensionalNeighbours = new List<NebourEntry>();
             foreach (TextParametryzised neighbour in known)
             {
                 //get distance
-                float distnaceSquere = 0;
-                for (int i = 0; i < neighbour.vector.Count; i++)
-                {
-                    float characteristicsdistnace = (neighbour.vector[i] - point.vector[i]);
-                    distnaceSquere += characteristicsdistnace * characteristicsdistnace;
-                }
-                potensionalNeighbours.Add(new NebourEntry(neighbour, distnaceSquere));
+                potensionalNeighbours.Add(new NebourEntry(neighbour, DistanceCalculator.getDistance(distanceTypes, neighbour.vector, point.vector)));
             }
             return potensionalNeighbours;
         }

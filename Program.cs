@@ -28,11 +28,15 @@ namespace lab
             characteristics.Add(new WorldsOverNChar(10));
             characteristics.Add(new WorldsOverNChar(100));
             //get texts
-            TestPool testPool = new TestPool(@"..\..\Files", 100, characteristics, true, 0.75f);
+            TestPool testPool = new TestPool(@"..\..\Files", 100, characteristics, true, 0.8f);
             //testing
             Console.WriteLine("Making guesses");
-            places[] testingPlaces = { places.usa };
-            testPool.MakeGuesses(testingPlaces, 5);
+            places[] testingPlaces = { places.usa , places.uk};
+            foreach (DistanceTypes distanceType in Enum.GetValues(typeof(DistanceTypes)))
+            {
+                Console.WriteLine(distanceType.ToString());
+                testPool.MakeGuesses(testingPlaces, 5, distanceType);
+            }
             //read to keep program running
             Console.WriteLine("Done: " + (DateTime.UtcNow - Process.GetCurrentProcess().StartTime.ToUniversalTime()).ToHumanTimeString());
             Console.Read();

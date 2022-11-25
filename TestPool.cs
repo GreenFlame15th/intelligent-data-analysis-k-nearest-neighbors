@@ -31,7 +31,7 @@ namespace lab
 
         public int getToTestCount() { return toTest.Count; }
 
-        public Dictionary<places, Dictionary<bool, int>> MakeGuessesWithFreshSplit(places[] testingPlaces, int nebourCount, float knownPopulatsion)
+        public Dictionary<places, Dictionary<bool, int>> MakeGuessesWithFreshSplit(places[] testingPlaces, int nebourCount, float knownPopulatsion, DistanceTypes distanceType)
         {
             Console.WriteLine("FreshSplit");
             (List<TextParametryzised>, List<TextParametryzised>) popSplit = allTexts.RandomeSplitList<TextParametryzised>(knownPopulatsion);
@@ -40,17 +40,17 @@ namespace lab
             Console.WriteLine("Known: " + freshKnown.Count);
             Console.WriteLine("To test: " + freshtoTest.Count);
             Console.WriteLine("Total: " + allTexts.Count);
-            return MakeGuesses(testingPlaces, nebourCount, freshtoTest, freshKnown);
+            return MakeGuesses(testingPlaces, nebourCount, freshtoTest, freshKnown, distanceType);
         }
-        public Dictionary<places, Dictionary<bool, int>> MakeGuesses(places[] testingPlaces, int nebourCount)
+        public Dictionary<places, Dictionary<bool, int>> MakeGuesses(places[] testingPlaces, int nebourCount, DistanceTypes distanceType)
         {
-            return MakeGuesses(testingPlaces, nebourCount, toTest, known);
+            return MakeGuesses(testingPlaces, nebourCount, toTest, known, distanceType);
         }
 
-        public Dictionary<places, Dictionary<bool, int>> MakeGuesses(places[] testingPlaces, int nebourCount, List<TextParametryzised> toTest, List<TextParametryzised> known)
+        public Dictionary<places, Dictionary<bool, int>> MakeGuesses(places[] testingPlaces, int nebourCount, List<TextParametryzised> toTest, List<TextParametryzised> known, DistanceTypes distanceType)
         {
             Dictionary<places, Dictionary<bool, int>> guessQuiltyCount
-                = PlaceGusser.MakeGuessesAndGetGuessQuiltyCount(toTest, known, testingPlaces, nebourCount);
+                = PlaceGusser.MakeGuessesAndGetGuessQuiltyCount(toTest, known, testingPlaces, nebourCount, distanceType);
             //assesing results
             Console.WriteLine("results:");
             foreach (places place in testingPlaces)
