@@ -1,0 +1,7 @@
+D:\Evangelina\homework\intAnalizaDanych\lab\bin\Debug\lab.exe.config
+D:\Evangelina\homework\intAnalizaDanych\lab\bin\Debug\lab.exe
+D:\Evangelina\homework\intAnalizaDanych\lab\bin\Debug\lab.pdb
+D:\Evangelina\homework\intAnalizaDanych\lab\obj\Debug\lab.csproj.AssemblyReference.cache
+D:\Evangelina\homework\intAnalizaDanych\lab\obj\Debug\lab.csproj.CoreCompileInputs.cache
+D:\Evangelina\homework\intAnalizaDanych\lab\obj\Debug\lab.exe
+D:\Evangelina\homework\intAnalizaDanych\lab\obj\Debug\lab.pdb
