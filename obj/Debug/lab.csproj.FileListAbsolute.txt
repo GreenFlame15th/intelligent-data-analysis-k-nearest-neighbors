@@ -5,3 +5,10 @@ D:\Evangelina\homework\intAnalizaDanych\lab\obj\Debug\lab.csproj.AssemblyReferen
 D:\Evangelina\homework\intAnalizaDanych\lab\obj\Debug\lab.csproj.CoreCompileInputs.cache
 D:\Evangelina\homework\intAnalizaDanych\lab\obj\Debug\lab.exe
 D:\Evangelina\homework\intAnalizaDanych\lab\obj\Debug\lab.pdb
+D:\Evangelina\homework\intAnalizaDanych\intelligent-data-analysis-k-nearest-neighbors\bin\Debug\lab.exe.config
+D:\Evangelina\homework\intAnalizaDanych\intelligent-data-analysis-k-nearest-neighbors\bin\Debug\lab.exe
+D:\Evangelina\homework\intAnalizaDanych\intelligent-data-analysis-k-nearest-neighbors\bin\Debug\lab.pdb
+D:\Evangelina\homework\intAnalizaDanych\intelligent-data-analysis-k-nearest-neighbors\obj\Debug\lab.csproj.AssemblyReference.cache
+D:\Evangelina\homework\intAnalizaDanych\intelligent-data-analysis-k-nearest-neighbors\obj\Debug\lab.csproj.CoreCompileInputs.cache
+D:\Evangelina\homework\intAnalizaDanych\intelligent-data-analysis-k-nearest-neighbors\obj\Debug\lab.exe
+D:\Evangelina\homework\intAnalizaDanych\intelligent-data-analysis-k-nearest-neighbors\obj\Debug\lab.pdb

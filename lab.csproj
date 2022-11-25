@@ -49,6 +49,10 @@
     <Compile Include="Characteristics\CapitalWorldCount.cs" />
     <Compile Include="Characteristics\CharCount.cs" />
     <Compile Include="Characteristics\CharPerWords.cs" />
+    <Compile Include="ListSplitter.cs" />
+    <Compile Include="PlaceGusser.cs" />
+    <Compile Include="TestPool.cs" />
+    <Compile Include="TextMaker.cs" />
     <Compile Include="VectorMaker.cs" />
     <Compile Include="Characteristics\WorldsOverNChar.cs" />
     <Compile Include="Characteristics\MedianWorldLenightDelta.cs" />
